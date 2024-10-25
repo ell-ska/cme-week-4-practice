@@ -1,8 +1,12 @@
+import 'server-only'
+
 import { type QueryData } from '@supabase/supabase-js'
 
-import { createClient } from './client'
+import { createClient } from './server'
 
-export const getHomePosts = (supabase: ReturnType<typeof createClient>) => {
+export const getHomePosts = () => {
+  const supabase = createClient()
+
   return supabase
     .from('posts')
     .select('id, title, slug, users("email")')
@@ -10,12 +14,3 @@ export const getHomePosts = (supabase: ReturnType<typeof createClient>) => {
 }
 
 export type HomePostsType = QueryData<ReturnType<typeof getHomePosts>>
-
-export const getPostsByQuery = (query: string) => {
-  const supabase = createClient()
-
-  return supabase
-    .from('posts')
-    .select('id, title, slug')
-    .textSearch('title', query.replace(/ /g, '+'))
-}

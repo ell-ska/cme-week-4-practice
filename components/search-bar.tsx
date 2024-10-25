@@ -6,20 +6,16 @@ import { useQuery } from '@tanstack/react-query'
 import Link from 'next/link'
 import { Search } from 'lucide-react'
 
-import { getPostsByQuery } from '@/utils/supabase/queries'
+import { get } from '@/utils/get'
+import { SearchResponse } from '@/app/api/search/route'
 
 export const SearchBar = () => {
   const pathname = usePathname()
 
   const [query, setQuery] = useState('')
-  const { data } = useQuery({
+  const { data } = useQuery<SearchResponse>({
     queryKey: ['search', query],
-    queryFn: async () => {
-      const { data, error } = await getPostsByQuery(query)
-
-      if (error) throw error
-      return data
-    },
+    queryFn: async () => get(`/api/search?query=${query}`),
     enabled: () => (query && query.length >= 3 ? true : false),
   })
 
