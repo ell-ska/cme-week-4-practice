@@ -1,3 +1,9 @@
+// this form, similar to LogInForm, will need to be updated to account for:
+// input validation
+// error handling
+// success handling
+// loading state
+
 import { signUp } from '@/actions/sign-up'
 import { Button } from '@/components/button'
 import { Input } from '@/components/input'
