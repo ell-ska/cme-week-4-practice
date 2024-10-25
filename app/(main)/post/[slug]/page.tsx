@@ -18,9 +18,15 @@ export default async function PostPage({
 
   return (
     <main className='main'>
-      <span className='mb-1 text-zinc-600'>{post.users?.email}</span>
-      <h1 className='mb-4 text-2xl font-bold'>{post.title}</h1>
-      <p>{post.content}</p>
+      <article className='space-y-4'>
+        <header className='flex items-start justify-between'>
+          <div className='space-y-1'>
+            <span className='text-zinc-600'>{post.users?.email}</span>
+            <h1 className='text-2xl font-bold'>{post.title}</h1>
+          </div>
+        </header>
+        <p>{post.content}</p>
+      </article>
     </main>
   )
 }
