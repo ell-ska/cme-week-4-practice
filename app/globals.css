@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .main {
+    @apply my-6 w-full max-w-3xl px-6;
+  }
+}
