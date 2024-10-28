@@ -1,4 +1,5 @@
 import { Albert_Sans } from 'next/font/google'
+import { Toaster } from 'sonner'
 import type { Metadata } from 'next'
 
 import { cn } from '@/utils/classnames'
@@ -25,7 +26,10 @@ export default function RootLayout({
           'flex min-h-screen flex-col items-center bg-zinc-50 font-medium text-zinc-800',
         )}
       >
-        <QueryClientProvider>{children}</QueryClientProvider>
+        <QueryClientProvider>
+          {children}
+          <Toaster />
+        </QueryClientProvider>
       </body>
     </html>
   )
