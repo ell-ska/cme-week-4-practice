@@ -17,7 +17,7 @@ This weeks version of the practice repository has been converted to only use the
 
 #### This change is not obligatory to do in your own repository
 
-But it is very common that database clients don't have a broswer version and creating a route handler where you use the server client to fetch data is the way to handle that in Next.js
+But it is very common that database clients don't have a broswer version and creating a route handler where you use the server client to fetch data, or a server action for mutations, is the way to handle that in Next.js
 
 ## Getting Started
 
