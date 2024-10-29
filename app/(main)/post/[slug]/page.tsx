@@ -30,9 +30,7 @@ export default async function PostPage({
             <span className='text-zinc-600'>{post.users?.email}</span>
             <h1 className='text-2xl font-bold'>{post.title}</h1>
           </div>
-          {isAuthor && (
-            <DeletePostButton postId={post.id} authorId={post.user_id} />
-          )}
+          {isAuthor && <DeletePostButton postId={post.id} />}
         </header>
         <p>{post.content}</p>
       </article>

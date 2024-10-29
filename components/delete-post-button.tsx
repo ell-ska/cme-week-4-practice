@@ -6,15 +6,9 @@ import { toast } from 'sonner'
 import { deletePost } from '@/actions/delete-post'
 import { Button } from './button'
 
-export const DeletePostButton = ({
-  postId,
-  authorId,
-}: {
-  postId: string
-  authorId: string
-}) => {
+export const DeletePostButton = ({ postId }: { postId: string }) => {
   const { mutate } = useMutation({
-    mutationFn: () => deletePost(postId, authorId),
+    mutationFn: () => deletePost(postId),
     onError: (error) => toast.error(error.message),
     onSuccess: () => toast.success('your post was deleted!'),
     onMutate: () => toast.loading('deleting post...'),
