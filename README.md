@@ -14,6 +14,7 @@ This weeks version of the practice repository has been converted to only use the
 - Check out `@/app/api` to see the newly created [route handlers](https://nextjs.org/docs/app/building-your-application/routing/route-handlers).
 - Note that `@/utils/supabase/client` has been deleted
 - Changes have been made to `@/utils/supabase/queries` and the query functions in `SearchBar` and `HomePosts` to work with route handlers
+- `@/utils/supabase/server.ts` and `@/utils/supabase/queries.ts` uses the package [server only](https://www.npmjs.com/package/server-only) to make sure you don't accidentally use a server function in the browser
 
 #### This change is not obligatory to do in your own repository
 
