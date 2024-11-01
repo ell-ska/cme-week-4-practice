@@ -8,7 +8,7 @@ import { z } from 'zod'
 import { Button } from '@/components/button'
 import { Input } from '@/components/input'
 import { Textarea } from '@/components/textarea'
-import { createPostSchema } from '@/actions/schemas'
+import { postSchema } from '@/actions/schemas'
 import { createPost } from '@/actions/create-post'
 import { useMutation } from '@tanstack/react-query'
 
@@ -22,8 +22,8 @@ export const CreatePostForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<z.infer<typeof createPostSchema>>({
-    resolver: zodResolver(createPostSchema),
+  } = useForm<z.infer<typeof postSchema>>({
+    resolver: zodResolver(postSchema),
   })
 
   return (
